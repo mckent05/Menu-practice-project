@@ -94,3 +94,18 @@
     margin-top: 5px;
     border-top: 1px dotted cadetblue;
 }
+@media screen and (max-width:1000px){
+    .item{
+        width: 100%;
+        display: block;
+
+    }
+    img{
+        width: 58vw;
+        border-radius: 5px;
+        
+    }
+    .image{
+        width: 60vw;
+    }
+}
