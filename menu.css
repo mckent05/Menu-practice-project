@@ -62,9 +62,9 @@
     width: 45%;
     margin: 10px;
 }
-.image{
+img{
     border: 5px solid cadetblue;
-    height: fit-content;
+    width: 200px;
     border-radius: 5px;
     
 
@@ -101,11 +101,9 @@
 
     }
     img{
-        width: 58vw;
+        width: 80vw;
         border-radius: 5px;
         
     }
-    .image{
-        width: 60vw;
-    }
+    
 }
