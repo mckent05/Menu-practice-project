@@ -42,6 +42,7 @@
     font-size: 1rem;
     font-weight: bold;
     border: 1.5px solid cadetblue;
+    transition: all 0.7s;
     
     
 }
@@ -51,7 +52,7 @@
 }
 .item-container{
     display: inline-flex;
-    width: 100%;
+    width: 80vw;
     flex-wrap: wrap;
     margin: 5vw;
     position: relative;

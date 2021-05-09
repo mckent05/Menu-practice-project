@@ -71,14 +71,64 @@ const menu = [
       img: "./images/item-9.jpeg",
       desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
     },
+    {
+        id: 10,
+        title: "dinner special",
+        category: "dinner",
+        price: 38.99,
+        img: "./images/item-10.jpeg",
+        desc: `Most Wonderful dinner experience you can have thats served at Tope's restuarant,great taste and definitely worth a try and your money, try it and be happy`,
+      },
   ];
 
 let container= document.querySelector('.item-container')
 
+let myBtn=document.querySelector('.btn')
+
 window.addEventListener('DOMContentLoaded', function(){
     showMenuItems(menu)
+    showButtons()
+    
+    
     
 })
+function showButtons(){
+    let createButton=menu.reduce(function(value,items){
+        if (!value.includes(items.category)){
+            value.push(items.category)
+        }
+        return value
+    
+    },['all'])
+    let displayBtn= createButton.map(function(allBtn){
+        return `<button class="filter-btn" type="button" data-id=${allBtn}>${allBtn}</button>`
+    })
+    displayBtn=displayBtn.join('')
+    myBtn.innerHTML=displayBtn
+    let filterBtns= document.querySelectorAll('.filter-btn')
+    filterBtns.forEach(function(btn){
+        btn.addEventListener('click', function(e){
+            let category= e.currentTarget.dataset.id
+            let filterDisplay=menu.filter(function(items){
+               if(items.category=== category)
+                return items
+    
+            })
+            if (category =='all'){
+                showMenuItems(menu)
+            }
+            else {
+                showMenuItems(filterDisplay)
+            }
+        
+        })
+    })
+    
+
+}
+
+    
+
 
 function showMenuItems(showMenu){
     let allItems= showMenu.map(function(items){
